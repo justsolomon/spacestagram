@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
+@import "variables";
+@import "reset";
+
+body {
+  font-family: $font-family;
+  color: $primary-color;
+  font-size: $font-size--base;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  object-fit: cover;
+}

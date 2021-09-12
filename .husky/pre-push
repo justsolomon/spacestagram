@@ -1,0 +1,6 @@
+if [[ `grep 'main'` ]]; then 
+  echo "Pushes to main branch not allowed. Switch to a different branch and try again"
+  exit 1
+fi
+
+git diff HEAD --quiet && yarn test
