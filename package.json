@@ -30,16 +30,33 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.18",
     "@types/redux-logger": "^3.0.9",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
     "prettier": "^2.4.0",
     "redux-logger": "^3.0.6",
     "typescript": "^4.1.2"
   },
   "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ],
+      "no-console": [
+        "warn"
+      ]
+    }
   },
   "browserslist": {
     "production": [
