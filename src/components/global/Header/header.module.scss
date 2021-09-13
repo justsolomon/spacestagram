@@ -1,0 +1,35 @@
+@import "styles/variables";
+
+.header {
+  margin: 1rem 3rem;
+
+  &__title {
+    font-size: $font-size--xxl;
+    font-weight: $font-weight--bold;
+    margin-bottom: 0.3rem;
+  }
+
+  &__attribution {
+    color: $secondary-color;
+  }
+
+  @media #{$media-desktop-sm} {
+    margin: 1rem 2.5rem;
+  }
+
+  @media #{$media-tablet} {
+    margin: 1rem 2rem;
+  }
+
+  @media #{$media-mobile} {
+    margin: 1rem 1.5rem;
+
+    &__title {
+      font-size: $font-size--xl;
+    }
+
+    &__attribution {
+      font-size: $font-size--sm;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 /* Typography variables */
 
-$font-family: "Work Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family: "Work Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
 $font-weight--normal: 400;
 $font-weight--medium: 500;
 $font-weight--bold: 700;
@@ -24,6 +25,8 @@ $bg-light--tertiary: #cbd5e0;
 $bg-dark--primary: rgba(0, 0, 0, 0.1);
 $bg-dark--secondary: rgba(0, 0, 0, 0.15);
 $bg-dark--tertiary: rgba(0, 0, 0, 0.2);
+$bg-like-button: #cbd5e0;
+$bg-share-button: #cbd5e0;
 
 $border-radius--sm: 4px;
 $border-radius--md: 6px;

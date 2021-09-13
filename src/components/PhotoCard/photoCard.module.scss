@@ -1,0 +1,42 @@
+@import "styles/variables";
+
+.photo-card {
+  width: 100%;
+  border-radius: $border-radius--sm;
+  border: 1px solid $bg-dark--primary;
+  background-color: $white;
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: $border-radius--sm;
+    border-top-right-radius: $border-radius--sm;
+    background-color: $bg-light--tertiary;
+  }
+
+  &__section {
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__details {
+    width: 70%;
+  }
+
+  &__action-buttons {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: $font-weight--medium;
+  }
+
+  &__date {
+    color: $secondary-color;
+    margin-top: 0.3rem;
+  }
+}
