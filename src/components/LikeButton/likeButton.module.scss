@@ -1,0 +1,6 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.like-button {
+  @include icon-button($bg-like-button, $like-button-outline);
+}

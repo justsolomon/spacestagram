@@ -1,0 +1,16 @@
+@import "styles/variables";
+
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  margin-bottom: 1rem;
+
+  @media #{$media-desktop-sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media #{$media-tablet} {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

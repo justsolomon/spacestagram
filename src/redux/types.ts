@@ -1,7 +1,7 @@
 import { Photo } from "types/photo";
 
 export interface RootState {
-  images: DefaultReducer<Photo[]>;
+  photos: DefaultReducer<Photo[]>;
 }
 
 export interface Action<Payload = null> {
@@ -14,4 +14,6 @@ export interface DefaultReducer<DataType> {
   success: boolean;
   error: string;
   data: DataType;
+  page: number;
+  hasNextPage: boolean;
 }

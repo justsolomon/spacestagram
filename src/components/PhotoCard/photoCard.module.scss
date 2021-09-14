@@ -1,0 +1,81 @@
+@import "styles/variables";
+
+.photo-card {
+  width: 100%;
+  border-radius: $border-radius--sm;
+  border: 1px solid $bg-dark--primary;
+  background-color: $white;
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: $border-radius--sm;
+    border-top-right-radius: $border-radius--sm;
+    background-color: $bg-light--tertiary;
+    object-fit: cover;
+  }
+
+  &__section {
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__details {
+    width: 70%;
+    line-height: $font-size--lg;
+  }
+
+  &__action-buttons {
+    width: 28%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    font-weight: $font-weight--medium;
+  }
+
+  &__date {
+    color: $secondary-color;
+    margin-top: 0.3rem;
+  }
+
+  @media #{$media-tablet} {
+    &__details {
+      width: 78%;
+    }
+
+    &__action-buttons {
+      width: 20%;
+    }
+  }
+
+  @media #{$media-mobile} {
+    &__details {
+      width: 75%;
+    }
+
+    &__action-buttons {
+      width: 23%;
+    }
+  }
+
+  @media #{$media-mobile-sm} {
+    &__section {
+      padding: 0.5rem 0.8rem;
+    }
+
+    &__details {
+      width: 73%;
+      font-size: $font-size--sm;
+      line-height: $font-size--md;
+    }
+
+    &__action-buttons {
+      width: 25%;
+      justify-content: space-between;
+    }
+  }
+}
