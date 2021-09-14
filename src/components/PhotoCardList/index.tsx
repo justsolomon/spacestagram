@@ -8,7 +8,11 @@ interface PhotoCardListProps {
   photos: Photo[];
 
   hasNextPage: boolean;
+
+  /** Function to like/unlike a photo */
   toggleLike: (id: number) => void;
+
+  /** Ref for tracking whether the loader is in view or not */
   loaderRef: (node?: Element | null) => void;
 }
 

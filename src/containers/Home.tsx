@@ -14,7 +14,7 @@ const Home = () => {
     hasNextPage,
   } = useSelector((state: RootState) => state.photos);
   const dispatch = useDispatch();
-  const { ref, inView } = useInView({ threshold: 0.25 });
+  const { ref, inView } = useInView({ threshold: 0 });
 
   const togglePhotoLike = (id: number): void => {
     const photoIndex = photos.findIndex((photo) => photo.id === id);
@@ -26,7 +26,7 @@ const Home = () => {
 
   useEffect(() => {
     if (inView) dispatch(fetchPhotos(page));
-  }, [inView]);
+  }, [inView, page, dispatch]);
 
   return (
     <Layout>

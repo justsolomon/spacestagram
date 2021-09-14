@@ -1,7 +1,7 @@
 @import "styles/variables";
 
 .header {
-  margin: 1rem 3rem;
+  margin: 1rem 7rem;
 
   &__title {
     font-size: $font-size--xxl;
@@ -14,15 +14,15 @@
   }
 
   @media #{$media-desktop-sm} {
-    margin: 1rem 2.5rem;
+    margin: 1rem 4rem;
   }
 
   @media #{$media-tablet} {
-    margin: 1rem 2rem;
+    margin: 1rem 6.5rem;
   }
 
   @media #{$media-mobile} {
-    margin: 1rem 1.5rem;
+    margin: 1rem 4rem;
 
     &__title {
       font-size: $font-size--xl;
@@ -31,5 +31,9 @@
     &__attribution {
       font-size: $font-size--sm;
     }
+  }
+
+  @media #{$media-mobile-sm} {
+    margin: 1rem 1.5rem;
   }
 }

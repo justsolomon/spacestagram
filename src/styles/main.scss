@@ -11,6 +11,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  font-family: $font-family;
+}
+
 img {
   object-fit: cover;
 }

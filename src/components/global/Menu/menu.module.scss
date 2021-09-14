@@ -1,0 +1,42 @@
+@import "styles/variables";
+
+.menu {
+  display: none;
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &--visible {
+    display: block;
+  }
+
+  &__content {
+    position: absolute;
+    margin-top: 4px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: $border-radius--sm;
+    box-shadow: $bg-dark--secondary 0px 0px 15px,
+      $bg-dark--secondary 0px 0px 3px 1px;
+
+    @media #{$media-mobile-sm} {
+      right: 16px;
+    }
+  }
+
+  &__button {
+    &--active {
+      button {
+        background-color: $bg-light--secondary;
+      }
+    }
+  }
+}
