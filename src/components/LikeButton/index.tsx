@@ -15,7 +15,9 @@ const LikeButton = ({ liked, toggleLike }: LikeButtonProps) => {
     <button
       aria-label={`${liked ? "Unlike" : "Like"} photo`}
       aria-pressed={liked ? "true" : "false"}
-      className={styles["like-button"]}
+      className={`${styles["like-button"]} ${
+        liked ? styles["like-button--active"] : ""
+      }`}
       onClick={toggleLike}
     >
       {liked ? <SolidHeart /> : <RegularHeart />}

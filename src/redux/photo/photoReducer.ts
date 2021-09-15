@@ -25,6 +25,7 @@ const photoReducer = (
       return {
         ...state,
         error: "",
+        hasNextPage: true,
         loading: true,
       };
     case FETCH_PHOTOS_SUCCESS:

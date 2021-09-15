@@ -4,6 +4,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  height: 40px;
 }
 
 @mixin icon-button($bg-color, $border-color) {
@@ -11,16 +12,15 @@
 
   justify-content: center;
   border-radius: 50%;
-  height: 40px;
   width: 40px;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background-color: $bg-color;
   }
 
   &:focus-visible {
-    outline: 0;
+    outline: none;
     border: 2px solid $border-color;
   }
 

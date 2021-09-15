@@ -24,11 +24,15 @@ const PhotoCardList = ({
 }: PhotoCardListProps) => {
   return (
     <>
-      <ul className={styles["photo-list"]}>
-        {photos.map((photo) => (
-          <PhotoCard photo={photo} toggleLike={toggleLike} />
-        ))}
-      </ul>
+      {!hasNextPage && !photos.length ? (
+        <p className={styles["no-photos"]}>There are no photos available</p>
+      ) : (
+        <ul className={styles["photo-list"]}>
+          {photos.map((photo) => (
+            <PhotoCard photo={photo} toggleLike={toggleLike} />
+          ))}
+        </ul>
+      )}
       {hasNextPage ? (
         <div ref={loaderRef}>
           <Spinner />

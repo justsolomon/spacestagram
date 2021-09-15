@@ -6,12 +6,14 @@ import { updatePhotos } from "redux/photo/photoActions";
 import { useEffect } from "react";
 import fetchPhotos from "redux/photo/photoService";
 import { useInView } from "react-intersection-observer";
+import ErrorMessage from "components/global/ErrorMessage";
 
 const Home = () => {
   const {
     data: photos,
     page,
     hasNextPage,
+    error,
   } = useSelector((state: RootState) => state.photos);
   const dispatch = useDispatch();
   const { ref, inView } = useInView({ threshold: 0 });
@@ -30,12 +32,19 @@ const Home = () => {
 
   return (
     <Layout>
-      <CardList
-        photos={photos}
-        toggleLike={togglePhotoLike}
-        loaderRef={ref}
-        hasNextPage={hasNextPage}
-      />
+      {error && !photos.length ? (
+        <ErrorMessage
+          error={error}
+          retryRequest={() => dispatch(fetchPhotos(page))}
+        />
+      ) : (
+        <CardList
+          photos={photos}
+          toggleLike={togglePhotoLike}
+          loaderRef={ref}
+          hasNextPage={hasNextPage}
+        />
+      )}
     </Layout>
   );
 };

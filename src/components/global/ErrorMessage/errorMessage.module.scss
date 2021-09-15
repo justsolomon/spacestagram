@@ -1,0 +1,52 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__description {
+    margin: 1rem 0;
+    font-size: $font-size--md;
+    line-height: $font-size--xl;
+
+    @media #{$media-mobile-sm} {
+      font-size: $font-size--base;
+    }
+  }
+
+  &__button {
+    @include default-button();
+
+    margin: 0;
+    background-color: $brand-color--primary;
+    color: $white;
+    border-radius: 20px;
+    padding: 0 1rem;
+    font-weight: $font-weight--medium;
+    font-size: $font-size--md;
+
+    &:hover {
+      background-color: $brand-color--secondary;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: $shadow-outline;
+    }
+
+    &:active {
+      background-color: $brand-color--tertiary;
+    }
+
+    svg {
+      height: 1.5em;
+      width: 1.5em;
+      margin: 0;
+      margin-right: 0.3rem;
+      color: $white;
+    }
+  }
+}

@@ -35,6 +35,7 @@
 
   &__title {
     font-weight: $font-weight--medium;
+    font-size: $font-size--md;
   }
 
   &__date {
@@ -71,6 +72,10 @@
       width: 73%;
       font-size: $font-size--sm;
       line-height: $font-size--md;
+    }
+
+    &__title {
+      font-size: $font-size--base;
     }
 
     &__action-buttons {
