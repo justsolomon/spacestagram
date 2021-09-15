@@ -18,7 +18,12 @@
     display: block;
   }
 
+  &--visible &__content {
+    animation: dropdown 0.25s;
+  }
+
   &__content {
+    min-width: 200px;
     position: absolute;
     margin-top: 4px;
     z-index: 2;
@@ -38,5 +43,31 @@
         background-color: $bg-light--secondary;
       }
     }
+  }
+}
+
+/** Dropdown animations **/
+@-webkit-keyframes dropdown {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes dropdown {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }

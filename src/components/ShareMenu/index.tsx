@@ -19,6 +19,7 @@ interface ShareMenuProps {
 
 const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const sharePost = () => {
     navigator
@@ -60,11 +61,17 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
             onClick={() => {
               navigator.clipboard
                 .writeText(imageSrc)
-                .then(() => setMenuOpen(false))
+                .then(() => {
+                  setIsCopied(true);
+
+                  setTimeout(() => {
+                    setIsCopied(false);
+                  }, 1000);
+                })
                 .catch(() => setMenuOpen(false));
             }}
           >
-            Copy link to photo
+            {isCopied ? "Copied!" : "Copy link to photo"}
           </MenuButton>
         </li>
       </ul>

@@ -11,7 +11,7 @@ interface MenuProps {
   /** Classname to apply to button to override default styles */
   className?: string;
 
-  /** Fucntion to close the menu */
+  /** Function to close the menu */
   onClose: () => void;
 
   children: React.ReactNode;

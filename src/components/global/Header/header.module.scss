@@ -24,10 +24,6 @@
   @media #{$media-mobile} {
     margin: 1rem 4rem;
 
-    &__title {
-      font-size: $font-size--xl;
-    }
-
     &__attribution {
       font-size: $font-size--sm;
     }
