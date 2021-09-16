@@ -4,20 +4,18 @@ import styles from "./photoCard.module.scss";
 import { useInView } from "react-intersection-observer";
 import ShareMenu from "components/ShareMenu";
 import PlaceholderImage from "assets/images/placeholder.jpeg";
+import usePhotoStorage from "hooks/usePhotoStorage";
 
 interface PhotoCardProps {
   /** Mars Rover photo information */
   photo: Photo;
-
-  /** Function to like/unlike a photo */
-  toggleLike: (id: number) => void;
 }
 
-const PhotoCard = ({ photo, toggleLike }: PhotoCardProps) => {
-  const title = `${photo.rover.name} rover - ${photo.camera.full_name}`;
-
+const PhotoCard = ({ photo }: PhotoCardProps) => {
   const { ref, inView } = useInView({ threshold: 0.25, triggerOnce: true });
+  const { isLiked, toggleLike } = usePhotoStorage(photo.id);
 
+  const title = `${photo.rover.name} rover - ${photo.camera.full_name}`;
   return (
     <li className={styles["photo-card"]} ref={ref}>
       <img
@@ -37,10 +35,7 @@ const PhotoCard = ({ photo, toggleLike }: PhotoCardProps) => {
             camera={photo.camera.full_name}
             imageSrc={photo.img_src}
           />
-          <LikeButton
-            liked={photo.liked}
-            toggleLike={() => toggleLike(photo.id)}
-          />
+          <LikeButton liked={isLiked} toggleLike={toggleLike} />
         </div>
       </div>
     </li>

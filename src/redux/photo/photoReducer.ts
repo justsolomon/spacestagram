@@ -4,7 +4,6 @@ import {
   FETCH_PHOTOS_FAILURE,
   FETCH_PHOTOS_LOADING,
   FETCH_PHOTOS_SUCCESS,
-  UPDATE_PHOTOS,
 } from "./photoTypes";
 
 const initialState: DefaultReducer<Photo[]> = {
@@ -36,11 +35,6 @@ const photoReducer = (
         page: newPhotos.length ? ++state.page : state.page,
         hasNextPage: Boolean(newPhotos.length),
         data: [...state.data, ...newPhotos],
-      };
-    case UPDATE_PHOTOS:
-      return {
-        ...state,
-        data: action.payload as Photo[],
       };
     case FETCH_PHOTOS_FAILURE:
       return {
