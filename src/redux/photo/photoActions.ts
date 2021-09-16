@@ -4,7 +4,6 @@ import {
   FETCH_PHOTOS_FAILURE,
   FETCH_PHOTOS_LOADING,
   FETCH_PHOTOS_SUCCESS,
-  UPDATE_PHOTOS,
 } from "./photoTypes";
 
 export const fetchPhotosLoading = (): Action => ({
@@ -19,9 +18,4 @@ export const fetchPhotosSuccess = (photos: Photo[]): Action<Photo[]> => ({
 export const fetchPhotosFailure = (error: string): Action<string> => ({
   type: FETCH_PHOTOS_FAILURE,
   payload: error,
-});
-
-export const updatePhotos = (photos: Photo[]): Action<Photo[]> => ({
-  type: UPDATE_PHOTOS,
-  payload: photos,
 });

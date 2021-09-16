@@ -1,5 +1,6 @@
 import { ReactComponent as SolidHeart } from "assets/vectors/heart-filled.svg";
 import { ReactComponent as RegularHeart } from "assets/vectors/heart-outline.svg";
+import { useState } from "react";
 import styles from "./likeButton.module.scss";
 
 interface LikeButtonProps {
@@ -11,14 +12,19 @@ interface LikeButtonProps {
 }
 
 const LikeButton = ({ liked, toggleLike }: LikeButtonProps) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <button
       aria-label={`${liked ? "Unlike" : "Like"} photo`}
       aria-pressed={liked ? "true" : "false"}
       className={`${styles["like-button"]} ${
-        liked ? styles["like-button--active"] : ""
+        isActive ? styles["like-button--active"] : ""
       }`}
-      onClick={toggleLike}
+      onClick={() => {
+        setIsActive(!liked);
+        toggleLike();
+      }}
     >
       {liked ? <SolidHeart /> : <RegularHeart />}
     </button>

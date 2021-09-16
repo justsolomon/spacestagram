@@ -9,9 +9,6 @@ interface PhotoCardListProps {
 
   hasNextPage: boolean;
 
-  /** Function to like/unlike a photo */
-  toggleLike: (id: number) => void;
-
   /** Ref for tracking whether the loader is in view or not */
   loaderRef: (node?: Element | null) => void;
 }
@@ -19,7 +16,6 @@ interface PhotoCardListProps {
 const PhotoCardList = ({
   photos,
   hasNextPage,
-  toggleLike,
   loaderRef,
 }: PhotoCardListProps) => {
   return (
@@ -29,7 +25,7 @@ const PhotoCardList = ({
       ) : (
         <ul className={styles["photo-list"]}>
           {photos.map((photo) => (
-            <PhotoCard photo={photo} toggleLike={toggleLike} />
+            <PhotoCard photo={photo} />
           ))}
         </ul>
       )}
