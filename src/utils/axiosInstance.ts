@@ -14,8 +14,8 @@ axiosInstance.interceptors.request.use((config) => {
 
 /**
  * Takes an axios error object and returns the error message
- * @param error Axios error object
- * @returns Axios or API error message
+ * @param error axios error object
+ * @returns axios or API error message
  */
 export const getErrorMessage = (error: AxiosError): string => {
   return error.response
