@@ -5,8 +5,10 @@ import { AxiosError } from "axios";
  * @param error axios error object
  * @returns axios or API error message
  */
-export const getErrorMessage = (error: AxiosError): string => {
+const getErrorMessage = (error: AxiosError): string => {
   return error.response
     ? error.response.data.errors || error.response.data.error.message
     : error.message;
 };
+
+export default getErrorMessage;

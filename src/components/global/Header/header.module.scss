@@ -23,13 +23,14 @@
 
   @media #{$media-mobile} {
     margin: 1rem 4rem;
-
-    &__attribution {
-      font-size: $font-size--sm;
-    }
   }
 
   @media #{$media-mobile-sm} {
     margin: 1rem 1.5rem;
+
+    &__attribution {
+      font-size: $font-size--xs;
+      line-height: $font-size--md;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import axios from "utils/axiosInstance";
-import { getErrorMessage } from "utils/getErrorMessage";
+import getErrorMessage from "utils/getErrorMessage";
 import {
   fetchPhotosFailure,
   fetchPhotosLoading,

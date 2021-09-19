@@ -1,4 +1,4 @@
-import { getErrorMessage } from "..";
+import getErrorMessage from "..";
 import { AxiosError, AxiosResponse } from "axios";
 
 const defaultAxiosError: AxiosError = {
