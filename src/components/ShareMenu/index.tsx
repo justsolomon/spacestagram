@@ -48,7 +48,7 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
   const hasShare = typeof navigator.share !== "undefined";
   const hasClipboard = typeof navigator.clipboard !== "undefined";
 
-  return !(hasShare && hasClipboard) ? null : (
+  return !(hasShare || hasClipboard) ? null : (
     <Menu
       isOpen={menuOpen}
       onClose={() => setMenuOpen(false)}
