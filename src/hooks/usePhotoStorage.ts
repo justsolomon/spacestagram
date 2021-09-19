@@ -1,13 +1,36 @@
 import { useEffect, useState } from "react";
 
 interface PhotoStorageProps {
-  /** Function to check whether a photo is liked */
+  /** Boolean showing whether a photo is liked */
   isLiked: boolean;
 
   /** Function to like/unlike a photo */
   toggleLike: () => void;
 }
 
+/**
+ * A hook used for checking a photo's liked status
+ * in the localStorage and for liking/unliking photos
+ *
+ * @param id the id of the photo
+ * @returns the liked status of a photo and a function to like/unlike it
+ * @example
+ * ```jsx
+ * import React from "react";
+ * import usePhotoStorage from "hooks/usePhotoStorage";
+ *
+ * const Component = () => {
+ *    const id = 1;
+ *    const { isLiked, toggleLike } = usePhotoStorage(id);
+ *
+ *    return (
+ *      <button onClick={() => toggleLike(id)}>
+ *        {isLiked ? "Unlike" : "Like"}
+ *      </button>
+ *    )
+ * }
+ * ```
+ */
 const usePhotoStorage = (id: number): PhotoStorageProps => {
   const [isLiked, setIsLiked] = useState(false);
 
@@ -33,10 +56,12 @@ const usePhotoStorage = (id: number): PhotoStorageProps => {
         delete likedPhotos[id];
         setIsLiked(false);
       } else {
+        //add liked photo if storage field already exists
         likedPhotos[id] = true;
         setIsLiked(true);
       }
     } else {
+      //add new storage field with liked photo
       likedPhotos = { [id]: true };
       setIsLiked(true);
     }

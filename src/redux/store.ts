@@ -5,6 +5,7 @@ import rootReducer from "./rootReducer";
 
 let middleware: Middleware[] = [thunk];
 
+//remove logger in production mode
 if (process.env.NODE_ENV !== "production") {
   middleware = [...middleware, logger];
 }

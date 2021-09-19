@@ -1,6 +1,11 @@
-@mixin default-button {
+@mixin flex-center {
   display: flex;
   align-items: center;
+}
+
+@mixin default-button {
+  @include flex-center();
+
   background: none;
   border: none;
   cursor: pointer;
