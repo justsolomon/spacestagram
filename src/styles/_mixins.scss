@@ -4,6 +4,8 @@
 }
 
 @mixin default-button {
+  @include flex-center();
+
   background: none;
   border: none;
   cursor: pointer;
