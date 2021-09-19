@@ -1,12 +1,15 @@
 /* Typography variables */
 
-$font-family: "Work Sans", "Open Sans", "Oxygen", "Ubuntu", "Cantarell",
-  "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family: "Open Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
+$header--font-family: "Work Sans", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
 $font-weight--normal: 400;
 $font-weight--medium: 600;
 $font-weight--bold: 700;
 
-$font-size--xs: 12px;
+$font-size--xxs: 12px;
+$font-size--xs: 13px;
 $font-size--sm: 14px;
 $font-size--base: 15px;
 $font-size--md: 16px;
