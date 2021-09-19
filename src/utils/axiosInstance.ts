@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 // Creates a base instance for all axios based request
 const axiosInstance = axios.create({
@@ -11,16 +11,5 @@ axiosInstance.interceptors.request.use((config) => {
 
   return config;
 });
-
-/**
- * Takes an axios error object and returns the error message
- * @param error axios error object
- * @returns axios or API error message
- */
-export const getErrorMessage = (error: AxiosError): string => {
-  return error.response
-    ? error.response.data.errors || error.response.data.error.message
-    : error.message;
-};
 
 export default axiosInstance;

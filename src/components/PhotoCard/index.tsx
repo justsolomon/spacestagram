@@ -16,8 +16,9 @@ const PhotoCard = ({ photo }: PhotoCardProps) => {
   const { isLiked, toggleLike } = usePhotoStorage(photo.id);
 
   const title = `${photo.rover.name} rover - ${photo.camera.full_name}`;
+
   return (
-    <li className={styles["photo-card"]} ref={ref}>
+    <li className={styles["photo-card"]} ref={ref} data-testid="photo-card">
       <img
         src={inView ? photo.img_src : PlaceholderImage}
         alt={title}
@@ -35,7 +36,7 @@ const PhotoCard = ({ photo }: PhotoCardProps) => {
             camera={photo.camera.full_name}
             imageSrc={photo.img_src}
           />
-          <LikeButton liked={isLiked} toggleLike={toggleLike} />
+          <LikeButton liked={isLiked} title={title} toggleLike={toggleLike} />
         </div>
       </div>
     </li>

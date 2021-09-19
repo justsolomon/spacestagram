@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PhotoCard /> should render the photo card correctly 1`] = `
+<DocumentFragment>
+  <li
+    class="photo-card"
+    data-testid="photo-card"
+  >
+    <img
+      alt="Curiosity rover - Mast Camera"
+      class="photo-card__image"
+      loading="lazy"
+      src="placeholder.jpeg"
+    />
+    <div
+      class="photo-card__section"
+    >
+      <div
+        class="photo-card__details"
+      >
+        <p
+          class="photo-card__title"
+        >
+          Curiosity rover - Mast Camera
+        </p>
+        <p
+          class="photo-card__date"
+        >
+          2015-05-30
+        </p>
+      </div>
+      <div
+        class="photo-card__action-buttons"
+      >
+        <button
+          aria-label="Like Curiosity rover - Mast Camera photo"
+          aria-pressed="false"
+          class="like-button "
+          data-testid="like-button"
+        >
+          <svg>
+            heart-outline.svg
+          </svg>
+        </button>
+      </div>
+    </div>
+  </li>
+</DocumentFragment>
+`;

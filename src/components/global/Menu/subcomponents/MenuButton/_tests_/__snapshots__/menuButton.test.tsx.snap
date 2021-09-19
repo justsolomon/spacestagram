@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MenuButton /> should render the menu button correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="menu-button"
+  >
+    <svg />
+    Test menu button
+  </button>
+</DocumentFragment>
+`;

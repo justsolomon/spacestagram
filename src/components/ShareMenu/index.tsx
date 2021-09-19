@@ -18,10 +18,10 @@ interface ShareMenuProps {
 }
 
 const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  const sharePost = () => {
+  const sharePhoto = () => {
     navigator
       .share({
         title: `${rover} rover - ${camera}`,
@@ -32,7 +32,23 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
       .catch(() => setMenuOpen(false));
   };
 
-  return (
+  const copyPhoto = () => {
+    navigator.clipboard
+      .writeText(imageSrc)
+      .then(() => {
+        setIsCopied(true);
+
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 1000);
+      })
+      .catch(() => setMenuOpen(false));
+  };
+
+  const hasShare = typeof navigator.share !== "undefined";
+  const hasClipboard = typeof navigator.clipboard !== "undefined";
+
+  return !(hasShare || hasClipboard) ? null : (
     <Menu
       isOpen={menuOpen}
       onClose={() => setMenuOpen(false)}
@@ -41,6 +57,7 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
           aria-label="Open share options menu"
           aria-pressed={menuOpen}
           className={styles["share-menu__button"]}
+          data-testid="share-menu__button"
           onClick={() => setMenuOpen(true)}
         >
           <ShareIcon />
@@ -48,32 +65,20 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
       }
     >
       <ul className={styles["share-menu__menu-buttons"]}>
-        {typeof navigator.share !== "undefined" ? (
-          <li>
-            <MenuButton icon={<ShareAltIcon />} onClick={() => sharePost()}>
+        {hasShare ? (
+          <li data-testid="share-menu__share-button">
+            <MenuButton icon={<ShareAltIcon />} onClick={sharePhoto}>
               Share photo via...
             </MenuButton>
           </li>
         ) : null}
-        <li>
-          <MenuButton
-            icon={<LinkCopyIcon />}
-            onClick={() => {
-              navigator.clipboard
-                .writeText(imageSrc)
-                .then(() => {
-                  setIsCopied(true);
-
-                  setTimeout(() => {
-                    setIsCopied(false);
-                  }, 1000);
-                })
-                .catch(() => setMenuOpen(false));
-            }}
-          >
-            {isCopied ? "Copied!" : "Copy link to photo"}
-          </MenuButton>
-        </li>
+        {hasClipboard ? (
+          <li data-testid="share-menu__copy-button">
+            <MenuButton icon={<LinkCopyIcon />} onClick={copyPhoto}>
+              {isCopied ? "Copied!" : "Copy link to photo"}
+            </MenuButton>
+          </li>
+        ) : null}
       </ul>
     </Menu>
   );
