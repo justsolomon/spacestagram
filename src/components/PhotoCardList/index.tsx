@@ -21,16 +21,18 @@ const PhotoCardList = ({
   return (
     <>
       {!hasNextPage && !photos.length ? (
-        <p className={styles["no-photos"]}>There are no photos available</p>
+        <p className={styles["no-photos"]} data-testid="no-photos">
+          There are no photos available
+        </p>
       ) : (
-        <ul className={styles["photo-list"]}>
+        <ul className={styles["photo-list"]} data-testid="photo-list">
           {photos.map((photo) => (
-            <PhotoCard photo={photo} />
+            <PhotoCard photo={photo} key={photo.id} />
           ))}
         </ul>
       )}
       {hasNextPage ? (
-        <div ref={loaderRef}>
+        <div ref={loaderRef} data-testid="spinner">
           <Spinner />
         </div>
       ) : null}

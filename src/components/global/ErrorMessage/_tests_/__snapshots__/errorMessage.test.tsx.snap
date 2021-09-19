@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorMessage /> should render the error message component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="error-message"
+  >
+    <svg>
+      error.svg
+    </svg>
+    <p
+      class="error-message__description"
+      data-testid="error-message__description"
+    >
+      An error occurred
+    </p>
+    <button
+      class="error-message__button"
+      data-testid="error-message__button"
+    >
+      <svg>
+        retry.svg
+      </svg>
+      <span>
+        Try again
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

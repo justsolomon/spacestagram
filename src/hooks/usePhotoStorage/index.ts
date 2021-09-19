@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 interface PhotoStorageProps {
-  /** Boolean showing whether a photo is liked */
+  /** Boolean showing whether the photo is liked */
   isLiked: boolean;
 
-  /** Function to like/unlike a photo */
+  /** Function to like/unlike the photo */
   toggleLike: () => void;
 }
 
@@ -24,15 +24,16 @@ interface PhotoStorageProps {
  *    const { isLiked, toggleLike } = usePhotoStorage(id);
  *
  *    return (
- *      <button onClick={() => toggleLike(id)}>
+ *      <button onClick={toggleLike}>
  *        {isLiked ? "Unlike" : "Like"}
  *      </button>
  *    )
  * }
  * ```
  */
+
 const usePhotoStorage = (id: number): PhotoStorageProps => {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState<boolean>(false);
 
   useEffect(() => {
     let likedPhotos = localStorage["likedPhotos"];

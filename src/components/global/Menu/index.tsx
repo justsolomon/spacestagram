@@ -50,19 +50,25 @@ function Menu({
   return (
     <div className={className}>
       <div
-        className={`${styles["menu__button"]} ${
-          isOpen ? styles["menu__button--active"] : ""
+        className={`${styles["menu__button-container"]} ${
+          isOpen ? styles["menu__button-container--active"] : ""
         }`}
+        data-testid="menu__button-container"
       >
         {button}
       </div>
       <div
         className={`${styles["menu"]} ${isOpen ? styles["menu--visible"] : ""}`}
+        data-testid="menu"
         onClick={onClose}
       >
-        <div className={styles["menu__overlay"]}></div>
+        <div
+          className={styles["menu__overlay"]}
+          data-testid="menu__overlay"
+        ></div>
         <div
           className={styles["menu__content"]}
+          data-testid="menu__content"
           onClick={(e) => e.stopPropagation()}
         >
           {children}
