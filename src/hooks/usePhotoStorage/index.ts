@@ -31,7 +31,6 @@ interface PhotoStorageProps {
  * }
  * ```
  */
-
 const usePhotoStorage = (id: number): PhotoStorageProps => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
 
@@ -53,7 +52,7 @@ const usePhotoStorage = (id: number): PhotoStorageProps => {
       likedPhotos = JSON.parse(likedPhotos);
 
       if (likedPhotos[id]) {
-        //remove already liked photo from storage
+        //remove already liked photo from storage field
         delete likedPhotos[id];
         setIsLiked(false);
       } else {
