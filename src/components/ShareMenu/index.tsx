@@ -21,10 +21,12 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
+  const title = `${rover} rover - ${camera}`;
+
   const sharePhoto = () => {
     navigator
       .share({
-        title: `${rover} rover - ${camera}`,
+        title,
         text: `Check out this photo taken on the ${rover} rover using the ${camera}`,
         url: imageSrc,
       })
@@ -54,7 +56,7 @@ const ShareMenu = ({ rover, camera, imageSrc }: ShareMenuProps) => {
       onClose={() => setMenuOpen(false)}
       button={
         <button
-          aria-label="Open share options menu"
+          aria-label={`Open share options menu for ${title} photo`}
           aria-pressed={menuOpen}
           className={styles["share-menu__button"]}
           data-testid="share-menu__button"

@@ -27,7 +27,7 @@ const PhotoCard = ({ photo }: PhotoCardProps) => {
       />
       <div className={styles["photo-card__section"]}>
         <div className={styles["photo-card__details"]}>
-          <p className={styles["photo-card__title"]}>{title}</p>
+          <h2 className={styles["photo-card__title"]}>{title}</h2>
           <p className={styles["photo-card__date"]}>{photo.earth_date}</p>
         </div>
         <div className={styles["photo-card__action-buttons"]}>

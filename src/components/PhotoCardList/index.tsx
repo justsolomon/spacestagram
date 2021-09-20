@@ -9,7 +9,7 @@ interface PhotoCardListProps {
 
   hasNextPage: boolean;
 
-  /** Ref for tracking whether the loader is in view or not */
+  /** Ref for tracking whether the loader/spinner is in view or not */
   loaderRef: (node?: Element | null) => void;
 }
 
@@ -18,19 +18,22 @@ const PhotoCardList = ({
   hasNextPage,
   loaderRef,
 }: PhotoCardListProps) => {
+  const photosAvailable = hasNextPage || photos.length;
+
   return (
     <>
-      {!hasNextPage && !photos.length ? (
-        <p className={styles["no-photos"]} data-testid="no-photos">
-          There are no photos available
-        </p>
-      ) : (
+      {photosAvailable ? (
         <ul className={styles["photo-list"]} data-testid="photo-list">
           {photos.map((photo) => (
             <PhotoCard photo={photo} key={photo.id} />
           ))}
         </ul>
+      ) : (
+        <p className={styles["no-photos"]} data-testid="no-photos">
+          There are no photos available
+        </p>
       )}
+
       {hasNextPage ? (
         <div ref={loaderRef} data-testid="spinner">
           <Spinner />

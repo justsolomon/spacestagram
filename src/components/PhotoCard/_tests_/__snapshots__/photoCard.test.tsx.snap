@@ -18,11 +18,11 @@ exports[`<PhotoCard /> should render the photo card correctly 1`] = `
       <div
         class="photo-card__details"
       >
-        <p
+        <h2
           class="photo-card__title"
         >
           Curiosity rover - Mast Camera
-        </p>
+        </h2>
         <p
           class="photo-card__date"
         >
