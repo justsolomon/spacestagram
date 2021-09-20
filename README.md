@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# spacestagram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Image sharing from the final frontier.
 
-## Available Scripts
+**Live URL**: https://spacestagram-app.netlify.app
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- View NASA's Mars Rover photos
+- Like and unlike photos
+- Persist liked photos through the browser's local storage
+- Copy and share links to the photos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The following contains the steps required to get the application up and running on your local workspace.
 
-### `yarn test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- node v15.14.0
+- yarn v1.22.10
+- git v2.32.0
 
-### `yarn build`
+### Running locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the app locally, follow the steps below:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository to your PC using your terminal. For more info, refer to this [article.](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Navigate into the repository using the command:
 
-### `yarn eject`
+   ```
+   cd spacestagram
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the dependencies in the package.json using the command:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. After the dependencies have been installed successfully:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   1. Create a `.env` file at the root of the repository.
 
-## Learn More
+   2. Copy the contents of the `.env.sample` file into the `.env` file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   3. Configure the environment variables in the now populated `.env` file with your own values.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Run the app in your terminal using the command:
+
+   ```
+   yarn start
+   ```
