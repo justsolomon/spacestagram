@@ -18,7 +18,7 @@ const PhotoCardList = ({
   hasNextPage,
   loaderRef,
 }: PhotoCardListProps) => {
-  const photosAvailable = hasNextPage && photos.length;
+  const photosAvailable = hasNextPage || photos.length;
 
   return (
     <>
