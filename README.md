@@ -35,9 +35,7 @@ The following contains the steps required to get the application up and running 
 ### Prerequisites
 
 - node v15.14.0
-
 - yarn v1.22.10
-
 - git v2.32.0
 
 ### Running locally
